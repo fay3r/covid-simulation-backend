@@ -4,6 +4,7 @@ import lombok.*;
 
 @Builder(toBuilder = true)
 @Getter
+@Setter
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,4 +17,6 @@ public class PersonDto {
     private Boolean infected;
     private Integer infectionDays;
     private Boolean alive;
+    private Boolean isolated;
+    private Boolean maskBearer;
 }

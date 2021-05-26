@@ -13,7 +13,6 @@ import javax.persistence.Id;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 
 @Entity
 class Simulation {

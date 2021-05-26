@@ -4,11 +4,14 @@ import com.simulations.covid.dto.SimulationDto;
 
 class DataCreator {
 
+    private final int ZERO=0;
+    private final int ONE=1;
+
     public int putData(SimulationDto simulationDto,
                         SimulationRepository simulationRepository,
                         PersonRepository personRepository) {
 
-        int simulationId = (int) simulationRepository.count() + 1;
+        int simulationId = (int) simulationRepository.count() + ONE;
         simulationRepository.save(
                 new Simulation().toBuilder()
                         .id(simulationId)
@@ -25,14 +28,14 @@ class DataCreator {
         int numberOfInfected = simulationDto.getInfected();
         boolean isInfected;
         int days;
-        for (int index = 1; index <= simulationDto.getPopulation(); index++) {
-            if (numberOfInfected > 0) {
+        for (int index = ONE; index <= simulationDto.getPopulation(); index++) {
+            if (numberOfInfected > ZERO) {
                 numberOfInfected--;
                 isInfected = true;
                 days = (int) (Math.floor(Math.random() * 6) + 1);;
             } else {
                 isInfected =false;
-                days=0;
+                days=ZERO;
             }
 
             personRepository.save(
@@ -43,6 +46,8 @@ class DataCreator {
                             .infected(isInfected)
                             .infectionDays(days)
                             .alive(true)
+                            .maskBearer(false)
+                            .isolated(false)
                             .build());
         }
         return simulationId;

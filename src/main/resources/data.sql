@@ -35,5 +35,9 @@ CREATE TABLE Person
     simulation_id  INTEGER NOT NULL,
     recovered      BOOLEAN NOT NULL,
     infected       BOOLEAN NOT NULL,
-    infection_days INTEGER NOT NULL
+    infection_days INTEGER NOT NULL,
+    alive          INTEGER NOT NULL,
+    isolated       BOOLEAN NOT NULL,
+    mask_bearer    BOOLEAN NOT NULL
+
 )

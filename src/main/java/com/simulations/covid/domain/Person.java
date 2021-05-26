@@ -14,7 +14,6 @@ import javax.persistence.Id;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 
 @Entity
 class Person {
@@ -32,6 +31,10 @@ class Person {
     private Integer infectionDays;
     @Column(name="alive")
     private Boolean alive;
+    @Column(name="isolated")
+    private Boolean isolated;
+    @Column(name="mask_bearer")
+    private Boolean maskBearer;
 
     PersonDto dto() {
         return PersonDto.builder()
@@ -41,6 +44,8 @@ class Person {
                 .infected(this.infected)
                 .infectionDays(this.infectionDays)
                 .alive(this.alive)
+                .isolated(this.isolated)
+                .maskBearer(this.maskBearer)
                 .build();
     }
 }

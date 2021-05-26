@@ -13,7 +13,6 @@ import javax.persistence.Id;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 
 @Entity
 class SimulationDay {
@@ -36,7 +35,6 @@ class SimulationDay {
 
     SimulationDayDto dto() {
         return SimulationDayDto.builder()
-                .simulationId(this.simulationId)
                 .dayNumber(this.dayNumber)
                 .infectedPeople(this.infectedPeople)
                 .vulnerablePeople(this.vulnerablePeople)

@@ -10,7 +10,6 @@ import lombok.*;
 @ToString
 public class SimulationDayDto {
 
-    private Integer simulationId;
     private Integer dayNumber;
     private Integer infectedPeople;
     private Integer vulnerablePeople;

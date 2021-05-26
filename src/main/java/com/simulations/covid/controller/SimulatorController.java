@@ -24,6 +24,7 @@ public class SimulatorController {
     @CrossOrigin
     @PutMapping(value = "/covid/simulation", produces = MediaType.APPLICATION_PROBLEM_JSON_UTF8_VALUE)
     ResponseEntity runSimulation(@RequestBody SimulationDto simulationDto){
+        LOGGER.info("SIMULATION STARTED");
         return ResponseEntity.ok(simulatorFacade.runSimulation(simulationDto));
     }
 }
