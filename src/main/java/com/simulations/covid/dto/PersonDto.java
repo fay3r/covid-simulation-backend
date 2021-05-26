@@ -12,7 +12,8 @@ public class PersonDto {
 
     private Integer personId;
     private Integer simulationId;
-    private Integer recovered;
-    private Integer infected;
+    private Boolean recovered;
+    private Boolean infected;
     private Integer infectionDays;
+    private Boolean alive;
 }

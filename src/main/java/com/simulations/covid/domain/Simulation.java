@@ -4,6 +4,7 @@ package com.simulations.covid.domain;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,9 +13,10 @@ import javax.persistence.Id;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 
 @Entity
-public class Simulation {
+class Simulation {
 
     @Id
     @Column(name = "simulation_id")
@@ -31,6 +33,8 @@ public class Simulation {
     private Integer mortality;
     @Column(name = "recovery_time")
     private Integer recoveryTime;
+    @Column(name = "mortality_time")
+    private Integer mortalityTime;
     @Column(name = "simulation_time")
     private Integer simulationTime;
 

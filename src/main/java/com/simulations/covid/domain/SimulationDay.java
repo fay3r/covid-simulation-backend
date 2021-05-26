@@ -1,8 +1,10 @@
 package com.simulations.covid.domain;
 
+import com.simulations.covid.dto.SimulationDayDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,9 +13,10 @@ import javax.persistence.Id;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 
 @Entity
-public class SimulationDay {
+class SimulationDay {
 
     @Id
     @Column(name = "day_id")
@@ -31,5 +34,14 @@ public class SimulationDay {
     @Column(name = "healed_people")
     private Integer healedPeople;
 
-
+    SimulationDayDto dto() {
+        return SimulationDayDto.builder()
+                .simulationId(this.simulationId)
+                .dayNumber(this.dayNumber)
+                .infectedPeople(this.infectedPeople)
+                .vulnerablePeople(this.vulnerablePeople)
+                .deadPeople(this.deadPeople)
+                .healedPeople(this.healedPeople)
+                .build();
+    }
 }
