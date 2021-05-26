@@ -1,5 +1,5 @@
 # covid-simulation-backend
-Recruitment task - simulation calculating spreading pandemic
+Recruitment task - simulation calculating spreading pandemic<br>
 Backend: Spring, Hibernate, Facade, 
 
 | Method  |       URL                    |  Request Body                          | Response body | Comment|
